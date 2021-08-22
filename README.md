@@ -1,3 +1,10 @@
+# Rando thoughts
+
+Algunos que puedo pensar ahora;
+- trading (Ichimokum, Gann)
+- Product design
+- Código
+- Proyectos
 # eleventy-base-blog
 
 A starter repository showing how to build a blog with the [Eleventy](https://github.com/11ty/eleventy) static site generator.
