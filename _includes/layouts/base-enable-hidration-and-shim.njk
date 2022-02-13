@@ -1,6 +1,9 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+
+    {% include 'head.njk' %}
+
     <!-- As an optimization, immediately begin fetching the JavaScript modules
         that we know for sure we'll eventually need. It's important we don't
         execute them yet, though. -->
@@ -26,6 +29,8 @@
   </head>
 
   <body dsd-pending>
+    {% include 'nav.njk' %}
+
     <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
 
 
@@ -38,7 +43,9 @@
     </script>
 
     <!-- Pre-rendered Lit components will be generated here. -->
+    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
     {{ content | safe }}
+    </main>
 
 
     <!-- At this point, browsers with native shadow DOM support will already
