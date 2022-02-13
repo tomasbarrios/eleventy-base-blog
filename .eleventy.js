@@ -5,9 +5,16 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const litPlugin = require('@lit-labs/eleventy-plugin-lit');
 
 module.exports = function(eleventyConfig) {
+
   // Add plugins
+  eleventyConfig.addPlugin(litPlugin, {
+    componentModules: [
+      'js/demo-greeter.js'
+    ],
+  });
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
@@ -17,6 +24,7 @@ module.exports = function(eleventyConfig) {
 
   // Alias `layout: post` to `layout: layouts/post.njk`
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
+  // eleventyConfig.addLayoutAlias("webcomponent", "layouts/webcomponent.njk");
 
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
@@ -45,7 +53,7 @@ module.exports = function(eleventyConfig) {
   });
 
   function filterTagList(tags) {
-    return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+    return (tags || []).filter(tag => ["all", "nav", "post", "posts", "webcomponents"].indexOf(tag) === -1);
   }
 
   eleventyConfig.addFilter("filterTagList", filterTagList)
@@ -56,7 +64,8 @@ module.exports = function(eleventyConfig) {
     collection.getAll().forEach(item => {
       (item.data.tags || []).forEach(tag => tagSet.add(tag));
     });
-
+    console.log("ANYONE HERE", tagSet)
+    console.log("filtered HERE", filterTagList([...tagSet]))
     return filterTagList([...tagSet]);
   });
 

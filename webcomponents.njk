@@ -1,0 +1,14 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Web Components
+  order: 2
+---
+{% set maxPosts = collections.webcomponents.length | min(3) %}
+<h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
+
+{% set webcomponentslist = collections.webcomponents | head(-3) %}
+{% set webcomponentslistCounter = collections.webcomponents | length %}
+{% include "webcomponentslist.njk" %}
+
+<p>More webcomponents can be found in <a href="{{ '/webcomponents/' | url }}">the archive</a>.</p>
