@@ -15,6 +15,11 @@ module.exports = function(eleventyConfig) {
       'js/demo-greeter.js'
     ],
   });
+  eleventyConfig.addPassthroughCopy({
+    "./node_modules/lit/experimental-hydrate-support.js": "assets/lit/experimental-hydrate-support.js",
+    "./node_modules/@webcomponents/template-shadowroot": "assets/@webcomponents/template-shadowroot"
+  });
+
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
