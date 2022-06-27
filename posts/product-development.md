@@ -3,7 +3,9 @@ title: Product idea
 description: See it
 date: 2022-06-27
 tags:
-  - product design idea
+  - product
+  - design
+  - idea
 layout: layouts/post.njk
 ---
 
