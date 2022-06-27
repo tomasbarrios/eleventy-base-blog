@@ -14,7 +14,7 @@ Storybook
 https://storybook.js.org/blog/testing-user-flows/
 https://storybook.js.org/blog/interaction-testing-sneak-peek/
 
-Componente:
+Componente (para mi, desde las ciencias de la computación):
 No intenta ser lo que no es
 No intenta conocer a quien no debe
 No intenta hacer mas que lo necesario

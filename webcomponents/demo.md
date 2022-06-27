@@ -7,10 +7,10 @@ tags:
 layout: layouts/webcomponent.njk
 ---
 
-This work in Chrome only yet
-and firefox, but with the a polifill, and also styles are not working properly, only internal styles wotk as you should see red
+This work in Chrome
+and firefox, but with the a polifill. See Readme
 
 <demo-greeter name="World"></demo-greeter>
 
-Styles are broken for both browsers, so this is not even mergeable(?)
+
 
